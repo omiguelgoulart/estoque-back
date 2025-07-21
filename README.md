@@ -60,3 +60,33 @@ backend/
 Este projeto utiliza JWT (JSON Web Token) para autenticação de usuários. 
 A geração e verificação dos tokens é realizada no arquivo `src/utils/token.ts`.
 -->
+
+## 📚 Dicionário Gitmoji – Emojis e Significados
+
+| Emoji | Código | Significado |
+|-------|--------|-------------|
+| 🎉    | `:tada:` | Início do projeto |
+| 📝    | `:memo:` | Escrita ou atualização de documentação (README.md, comentários, etc.) |
+| ✨    | `:sparkles:` | Nova funcionalidade |
+| 🐛    | `:bug:` | Correção de bug |
+| ♻️    | `:recycle:` | Refatoração de código (sem alteração de comportamento) |
+| 🔥    | `:fire:` | Remoção de código ou arquivos |
+| 🚑️   | `:ambulance:` | Correção crítica / hotfix |
+| 💄    | `:lipstick:` | Alterações de estilo (UI, CSS, layout, etc.) |
+| 🎨    | `:art:` | Melhoria na estrutura/formatação do código |
+| ✅    | `:white_check_mark:` | Adição de testes |
+| 🧪    | `:test_tube:` | Escrita de testes |
+| 🚀    | `:rocket:` | Preparação para deploy |
+| 🔧    | `:wrench:` | Alterações de configuração (ex: .env, config.js) |
+| 🔒    | `:lock:` | Correções de segurança / ajustes de permissões |
+| 📦    | `:package:` | Alterações em dependências ou arquivos de build (package.json, etc.) |
+| ⬆️    | `:arrow_up:` | Upgrade de dependência |
+| ⬇️    | `:arrow_down:` | Downgrade de dependência |
+| 👷    | `:construction_worker:` | Configuração de CI/CD |
+| 🐳    | `:whale:` | Alterações relacionadas ao Docker |
+| 🗃️    | `:card_file_box:` | Alterações em banco de dados ou migrations |
+| 🏗️    | `:building_construction:` | Trabalhando na estrutura/projeto |
+| 🚨    | `:rotating_light:` | Correções de linter ou avisos |
+| 🧱    | `:bricks:` | Infraestrutura ou arquitetura base |
+| 🧹    | `:broom:` | Limpeza de código ou arquivos |
+| 📈    | `:chart_with_upwards_trend:` | Melhoria de performance ou métricas |
