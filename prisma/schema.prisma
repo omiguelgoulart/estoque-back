@@ -6,10 +6,94 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        String   @id @default(uuid())
+  nome      String
+  email     String   @unique
+  senha     String
+  cargo     Cargo
+  criadoEm  DateTime @default(now())
+
+  retiradas RetiradaEstoque[]
+  entradas  EntradaEstoque[]
+  logs      LogMovimentacao[]
+
+  @@map("usuarios")
+}
+
+enum Cargo {
+  ADMIN
+  FUNCIONARIO
+}
+
+model Produto {
+  id           String   @id @default(uuid())
+  nome         String
+  unidade      Unidade
+  estoqueAtual Float    @default(0)
+  criadoEm     DateTime @default(now())
+
+  entradas     EntradaEstoque[]
+  retiradas    RetiradaEstoque[]
+  logsMovimentacao LogMovimentacao[]
+
+  @@map("produtos")
+}
+
+enum Unidade {
+  UNIDADE
+  LITRO
+  GRAMA
+}
+
+model EntradaEstoque {
+  id         String   @id @default(uuid())
+  produtoId  String
+  usuarioId  String
+  quantidade Float
+  data       DateTime @default(now())
+
+  produto    Produto  @relation(fields: [produtoId], references: [id])
+  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+
+  @@map("entradas_estoque")
+}
+
+model RetiradaEstoque {
+  id         String   @id @default(uuid())
+  produtoId  String
+  usuarioId  String
+  quantidade Float
+  data       DateTime @default(now())
+
+  produto    Produto  @relation(fields: [produtoId], references: [id])
+  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+
+  @@map("retiradas_estoque")
+}
+
+model LogMovimentacao {
+  id         String   @id @default(uuid())
+  tipo       TipoMovimentacao
+  produtoId  String
+  usuarioId  String
+  quantidade Float
+  data       DateTime @default(now())
+
+  produto    Produto  @relation(fields: [produtoId], references: [id])
+  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+
+  @@map("logs_movimentacao")
+}
+
+enum TipoMovimentacao {
+  ENTRADA
+  RETIRADA
 }

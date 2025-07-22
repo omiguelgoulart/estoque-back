@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    /* Diretório base para usar importações absolutas */
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+
+    /* Saída dos arquivos compilados */
+    "outDir": "dist",
+
+    /* Target da linguagem e módulo */
+    "target": "ES2020",
+    "module": "commonjs",
+
+    /* Compatibilidade entre ESModules e CommonJS */
+    "esModuleInterop": true,
+
+    /* Checagem de tipos mais rigorosa */
+    "strict": true,
+
+    /* Melhoria de performance na build */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}
