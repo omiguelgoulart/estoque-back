@@ -13,7 +13,7 @@ app.use(cors())
 app.use(express.json())
 
 // Rotas
-app.use('/auth', authRoutes)
+app.use('/login', authRoutes)
 app.use('/usuarios', usuarioRoutes)
 
 //Rota raiz

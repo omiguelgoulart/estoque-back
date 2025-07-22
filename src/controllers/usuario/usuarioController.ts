@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Cargo } from '@prisma/client'
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
 import { usuarioSchema } from '@/schemas/usuarioSchema'
@@ -30,7 +30,7 @@ export async function criarUsuario(req: Request, res: Response) {
         nome,
         email,
         senha: senhaHash,
-        cargo: cargo as import('@prisma/client').Cargo,
+        cargo: cargo as Cargo,
       },
     })
 
@@ -41,7 +41,7 @@ export async function criarUsuario(req: Request, res: Response) {
       cargo: novoUsuario.cargo,
     })
   } catch (error) {
-    console.error(error)
+    console.error('[ERRO CRIAR USUÁRIO]', error)
     return res.status(500).json({ erro: 'Erro ao criar usuário.' })
   }
 }
@@ -58,9 +58,10 @@ export async function listarUsuarios(req: Request, res: Response) {
         criadoEm: true,
       },
     })
+
     return res.json(usuarios)
   } catch (error) {
-    console.error(error)
+    console.error('[ERRO LISTAR USUÁRIOS]', error)
     return res.status(500).json({ erro: 'Erro ao listar usuários.' })
   }
 }
