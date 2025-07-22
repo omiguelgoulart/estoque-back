@@ -1,3 +1,5 @@
+
+
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 
@@ -6,6 +8,18 @@ interface TokenPayload {
   cargo: 'ADMIN' | 'ESTOQUISTA'
   iat: number
   exp: number
+}
+
+// Extende o tipo Request para incluir a propriedade 'user'
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        id: string
+        cargo: 'ADMIN' | 'ESTOQUISTA'
+      }
+    }
+  }
 }
 
 export function autenticarJWT(req: Request, res: Response, next: NextFunction) {
