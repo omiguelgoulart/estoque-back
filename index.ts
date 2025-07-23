@@ -1,13 +1,13 @@
 import express from 'express'
 import cors from 'cors'
 
-import authRoutes from '@/routes/auth/authRoutes'
-import usuarioRoutes from '@/routes/usuario/usuarioRoutes'
-import produtoRoutes from '@/routes/produto/produtoRoutes'
-import entradaRoutes from '@/routes/estoque/entradaRoutes'
-import retiradaRoutes from '@/routes/estoque/retiradaRoutes'
-import logRoutes from '@/routes/estoque/logRoutes'
-import { errorHandler } from '@/middlewares/errorHandler'
+import authRoutes from './src/routes/auth/authRoutes'
+import usuarioRoutes from './src/routes/usuario/usuarioRoutes'
+import produtoRoutes from './src/routes/produto/produtoRoutes'
+import entradaRoutes from './src/routes/estoque/entradaRoutes'
+import retiradaRoutes from './src/routes/estoque/retiradaRoutes'
+import logRoutes from './src/routes/estoque/logRoutes'
+import { errorHandler } from './src/middlewares/errorHandler'
 
 
 const app = express()
