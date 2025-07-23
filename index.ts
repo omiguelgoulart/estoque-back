@@ -1,5 +1,4 @@
 import express from 'express'
-import dotenv from 'dotenv'
 import cors from 'cors'
 
 import authRoutes from '@/routes/auth/authRoutes'
@@ -10,7 +9,6 @@ import retiradaRoutes from '@/routes/estoque/retiradaRoutes'
 import logRoutes from '@/routes/estoque/logRoutes'
 import { errorHandler } from '@/middlewares/errorHandler'
 
-dotenv.config()
 
 const app = express()
 

@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 
 interface TokenPayload {
   id: string
-  cargo: 'ADMIN' | 'ESTOQUISTA'
+  cargo: 'ADMIN' | 'FUNCIONARIO'
   iat: number
   exp: number
 }
@@ -16,7 +16,7 @@ declare global {
     interface Request {
       user?: {
         id: string
-        cargo: 'ADMIN' | 'ESTOQUISTA'
+        cargo: 'ADMIN' | 'FUNCIONARIO'
       }
     }
   }
